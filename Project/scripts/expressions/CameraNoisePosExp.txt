@@ -1,0 +1,25 @@
+if (Camera.ApplyNoise) {
+
+$parm_noise_x = Camera.NoisePosX ;
+$parm_noise_y = Camera.NoisePosY ;
+$parm_noise_z = Camera.NoisePosZ ;
+
+$parm_speed_x = Camera.SpeedPosX ;
+$parm_speed_y = Camera.SpeedPosY ;
+$parm_speed_z = Camera.SpeedPosZ ;
+
+$parm_offset_x = Camera.OffsetPosX ;
+$parm_offset_y = Camera.OffsetPosY ;
+$parm_offset_z = Camera.OffsetPosZ ;
+
+Camera_NoisePos_CTRL.translateX = $parm_noise_x * noise( $parm_speed_x * time + $parm_offset_x ) ;
+Camera_NoisePos_CTRL.translateY = $parm_noise_y * noise( $parm_speed_y * time + $parm_offset_y ) ;
+Camera_NoisePos_CTRL.translateZ = $parm_noise_z * noise( $parm_speed_z * time + $parm_offset_z ) ;
+
+} else {
+
+Camera_NoisePos_CTRL.translateX = 0 ;
+Camera_NoisePos_CTRL.translateY = 0 ;
+Camera_NoisePos_CTRL.translateZ = 0 ;
+
+}
